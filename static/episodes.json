@@ -1,0 +1,1243 @@
+[
+ {
+  "dataset": "FunQA",
+  "uid": "funqa#0",
+  "question": "What is the color of the cat in the video?",
+  "options": [
+   "A. Black",
+   "B. White",
+   "C. Grey",
+   "D. Orange",
+   "E. Brown"
+  ],
+  "gold": 1,
+  "answers": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "p_top": [
+   0.781,
+   0.7791,
+   0.8894,
+   0.8636,
+   0.8636,
+   0.9104,
+   0.9111,
+   0.91,
+   0.9335,
+   0.9115,
+   0.9115,
+   0.9024,
+   0.9024,
+   0.8908,
+   0.9021,
+   0.9221
+  ],
+  "commit_window": 5,
+  "n_windows": 16,
+  "cardano_answer": 1,
+  "whole_clip_answer": 1,
+  "frames": [
+   "w01.jpg",
+   "w02.jpg",
+   "w03.jpg",
+   "w04.jpg",
+   "w05.jpg",
+   "w06.jpg",
+   "w07.jpg",
+   "w08.jpg",
+   "w09.jpg",
+   "w10.jpg",
+   "w11.jpg",
+   "w12.jpg",
+   "w13.jpg",
+   "w14.jpg",
+   "w15.jpg",
+   "w16.jpg"
+  ],
+  "kind": "success",
+  "per_window": [
+   {
+    "answer": 1,
+    "p_top": 0.781
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7791
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8894
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8636
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8636
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9104
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9111
+   },
+   {
+    "answer": 1,
+    "p_top": 0.91
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9335
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9115
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9115
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9024
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9024
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8908
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9021
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9221
+   }
+  ],
+  "_media": [
+   "media/FunQA_funqa_0_w01.jpg",
+   "media/FunQA_funqa_0_w02.jpg",
+   "media/FunQA_funqa_0_w03.jpg",
+   "media/FunQA_funqa_0_w04.jpg",
+   "media/FunQA_funqa_0_w05.jpg",
+   "media/FunQA_funqa_0_w06.jpg",
+   "media/FunQA_funqa_0_w07.jpg",
+   "media/FunQA_funqa_0_w08.jpg",
+   "media/FunQA_funqa_0_w09.jpg",
+   "media/FunQA_funqa_0_w10.jpg",
+   "media/FunQA_funqa_0_w11.jpg",
+   "media/FunQA_funqa_0_w12.jpg",
+   "media/FunQA_funqa_0_w13.jpg",
+   "media/FunQA_funqa_0_w14.jpg",
+   "media/FunQA_funqa_0_w15.jpg",
+   "media/FunQA_funqa_0_w16.jpg"
+  ]
+ },
+ {
+  "dataset": "FunQA",
+  "uid": "funqa#10098",
+  "question": "What are the two people wearing in the video?",
+  "options": [
+   "A. Panda costumes",
+   "B. Bunny costumes",
+   "C. Cat costumes",
+   "D. Dog costumes",
+   "E. No costumes"
+  ],
+  "gold": 0,
+  "answers": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "p_top": [
+   0.5132,
+   0.9928,
+   0.9936,
+   0.9932,
+   0.9914,
+   0.9909,
+   0.9907,
+   0.9885,
+   0.9891,
+   0.9904,
+   0.9883,
+   0.9881,
+   0.9847,
+   0.986,
+   0.9841,
+   0.9851
+  ],
+  "commit_window": 3,
+  "n_windows": 16,
+  "cardano_answer": 0,
+  "whole_clip_answer": 0,
+  "frames": [
+   "w01.jpg",
+   "w02.jpg",
+   "w03.jpg",
+   "w04.jpg",
+   "w05.jpg",
+   "w06.jpg",
+   "w07.jpg",
+   "w08.jpg",
+   "w09.jpg",
+   "w10.jpg",
+   "w11.jpg",
+   "w12.jpg",
+   "w13.jpg",
+   "w14.jpg",
+   "w15.jpg",
+   "w16.jpg"
+  ],
+  "kind": "success",
+  "per_window": [
+   {
+    "answer": 1,
+    "p_top": 0.5132
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9928
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9936
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9932
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9914
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9909
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9907
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9885
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9891
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9904
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9883
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9881
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9847
+   },
+   {
+    "answer": 0,
+    "p_top": 0.986
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9841
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9851
+   }
+  ],
+  "_media": [
+   "media/FunQA_funqa_10098_w01.jpg",
+   "media/FunQA_funqa_10098_w02.jpg",
+   "media/FunQA_funqa_10098_w03.jpg",
+   "media/FunQA_funqa_10098_w04.jpg",
+   "media/FunQA_funqa_10098_w05.jpg",
+   "media/FunQA_funqa_10098_w06.jpg",
+   "media/FunQA_funqa_10098_w07.jpg",
+   "media/FunQA_funqa_10098_w08.jpg",
+   "media/FunQA_funqa_10098_w09.jpg",
+   "media/FunQA_funqa_10098_w10.jpg",
+   "media/FunQA_funqa_10098_w11.jpg",
+   "media/FunQA_funqa_10098_w12.jpg",
+   "media/FunQA_funqa_10098_w13.jpg",
+   "media/FunQA_funqa_10098_w14.jpg",
+   "media/FunQA_funqa_10098_w15.jpg",
+   "media/FunQA_funqa_10098_w16.jpg"
+  ]
+ },
+ {
+  "dataset": "FunQA",
+  "uid": "funqa#15390",
+  "question": "What is depicted on the playing cards in the video?",
+  "options": [
+   "A. Roses",
+   "B. Hearts",
+   "C. Diamonds",
+   "D. Spades",
+   "E. Clubs"
+  ],
+  "gold": 0,
+  "answers": [
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "p_top": [
+   0.4526,
+   0.4163,
+   0.7883,
+   0.6907,
+   0.8899,
+   0.9504,
+   0.9491,
+   0.9194,
+   0.9055,
+   0.5204,
+   0.6675,
+   0.6963,
+   0.6122,
+   0.6396,
+   0.6097,
+   0.5764
+  ],
+  "commit_window": 6,
+  "n_windows": 16,
+  "cardano_answer": 0,
+  "whole_clip_answer": 1,
+  "frames": [
+   "w01.jpg",
+   "w02.jpg",
+   "w03.jpg",
+   "w04.jpg",
+   "w05.jpg",
+   "w06.jpg",
+   "w07.jpg",
+   "w08.jpg",
+   "w09.jpg",
+   "w10.jpg",
+   "w11.jpg",
+   "w12.jpg",
+   "w13.jpg",
+   "w14.jpg",
+   "w15.jpg",
+   "w16.jpg"
+  ],
+  "kind": "success",
+  "per_window": [
+   {
+    "answer": 1,
+    "p_top": 0.4526
+   },
+   {
+    "answer": 1,
+    "p_top": 0.4163
+   },
+   {
+    "answer": 0,
+    "p_top": 0.7883
+   },
+   {
+    "answer": 0,
+    "p_top": 0.6907
+   },
+   {
+    "answer": 0,
+    "p_top": 0.8899
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9504
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9491
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9194
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9055
+   },
+   {
+    "answer": 0,
+    "p_top": 0.5204
+   },
+   {
+    "answer": 0,
+    "p_top": 0.6675
+   },
+   {
+    "answer": 1,
+    "p_top": 0.6963
+   },
+   {
+    "answer": 1,
+    "p_top": 0.6122
+   },
+   {
+    "answer": 1,
+    "p_top": 0.6396
+   },
+   {
+    "answer": 1,
+    "p_top": 0.6097
+   },
+   {
+    "answer": 1,
+    "p_top": 0.5764
+   }
+  ],
+  "_media": [
+   "media/FunQA_funqa_15390_w01.jpg",
+   "media/FunQA_funqa_15390_w02.jpg",
+   "media/FunQA_funqa_15390_w03.jpg",
+   "media/FunQA_funqa_15390_w04.jpg",
+   "media/FunQA_funqa_15390_w05.jpg",
+   "media/FunQA_funqa_15390_w06.jpg",
+   "media/FunQA_funqa_15390_w07.jpg",
+   "media/FunQA_funqa_15390_w08.jpg",
+   "media/FunQA_funqa_15390_w09.jpg",
+   "media/FunQA_funqa_15390_w10.jpg",
+   "media/FunQA_funqa_15390_w11.jpg",
+   "media/FunQA_funqa_15390_w12.jpg",
+   "media/FunQA_funqa_15390_w13.jpg",
+   "media/FunQA_funqa_15390_w14.jpg",
+   "media/FunQA_funqa_15390_w15.jpg",
+   "media/FunQA_funqa_15390_w16.jpg"
+  ]
+ },
+ {
+  "dataset": "NExT-QA",
+  "uid": "nextqa#test#0",
+  "question": "why did the girl put her head so close to the phone",
+  "options": [
+   "A. conducting interview",
+   "B. talk",
+   "C. check message",
+   "D. look at photos",
+   "E. kissing it"
+  ],
+  "gold": 4,
+  "answers": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "p_top": [
+   0.7465,
+   0.9227,
+   0.9253,
+   0.9013,
+   0.9369,
+   0.9321,
+   0.934,
+   0.9175,
+   0.9219,
+   0.9243,
+   0.9155,
+   0.9175,
+   0.9089,
+   0.9222,
+   0.9072,
+   0.8832
+  ],
+  "commit_window": 3,
+  "n_windows": 16,
+  "cardano_answer": 4,
+  "whole_clip_answer": 4,
+  "frames": [
+   "w01.jpg",
+   "w02.jpg",
+   "w03.jpg",
+   "w04.jpg",
+   "w05.jpg",
+   "w06.jpg",
+   "w07.jpg",
+   "w08.jpg",
+   "w09.jpg",
+   "w10.jpg",
+   "w11.jpg",
+   "w12.jpg",
+   "w13.jpg",
+   "w14.jpg",
+   "w15.jpg",
+   "w16.jpg"
+  ],
+  "kind": "success",
+  "per_window": [
+   {
+    "answer": 4,
+    "p_top": 0.7465
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9227
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9253
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9013
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9369
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9321
+   },
+   {
+    "answer": 4,
+    "p_top": 0.934
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9175
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9219
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9243
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9155
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9175
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9089
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9222
+   },
+   {
+    "answer": 4,
+    "p_top": 0.9072
+   },
+   {
+    "answer": 4,
+    "p_top": 0.8832
+   }
+  ],
+  "_media": [
+   "media/NExT-QA_nextqa_test_0_w01.jpg",
+   "media/NExT-QA_nextqa_test_0_w02.jpg",
+   "media/NExT-QA_nextqa_test_0_w03.jpg",
+   "media/NExT-QA_nextqa_test_0_w04.jpg",
+   "media/NExT-QA_nextqa_test_0_w05.jpg",
+   "media/NExT-QA_nextqa_test_0_w06.jpg",
+   "media/NExT-QA_nextqa_test_0_w07.jpg",
+   "media/NExT-QA_nextqa_test_0_w08.jpg",
+   "media/NExT-QA_nextqa_test_0_w09.jpg",
+   "media/NExT-QA_nextqa_test_0_w10.jpg",
+   "media/NExT-QA_nextqa_test_0_w11.jpg",
+   "media/NExT-QA_nextqa_test_0_w12.jpg",
+   "media/NExT-QA_nextqa_test_0_w13.jpg",
+   "media/NExT-QA_nextqa_test_0_w14.jpg",
+   "media/NExT-QA_nextqa_test_0_w15.jpg",
+   "media/NExT-QA_nextqa_test_0_w16.jpg"
+  ]
+ },
+ {
+  "dataset": "TimeBlind",
+  "uid": "tb000018",
+  "question": "Is the sprout getting shorter?",
+  "options": [
+   "A. Yes",
+   "B. No"
+  ],
+  "gold": 1,
+  "answers": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "p_top": [
+   0.7058,
+   0.7982,
+   0.8176,
+   0.7773,
+   0.8176,
+   0.7773,
+   0.852,
+   0.8808,
+   0.9047,
+   0.852,
+   0.8176,
+   0.7982,
+   0.7058,
+   0.6514,
+   0.5927,
+   0.6792
+  ],
+  "commit_window": 5,
+  "n_windows": 16,
+  "cardano_answer": 1,
+  "whole_clip_answer": 1,
+  "frames": [
+   "w01.jpg",
+   "w02.jpg",
+   "w03.jpg",
+   "w04.jpg",
+   "w05.jpg",
+   "w06.jpg",
+   "w07.jpg",
+   "w08.jpg",
+   "w09.jpg",
+   "w10.jpg",
+   "w11.jpg",
+   "w12.jpg",
+   "w13.jpg",
+   "w14.jpg",
+   "w15.jpg",
+   "w16.jpg"
+  ],
+  "kind": "success",
+  "per_window": [
+   {
+    "answer": 1,
+    "p_top": 0.7058
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7982
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8176
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7773
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8176
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7773
+   },
+   {
+    "answer": 1,
+    "p_top": 0.852
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8808
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9047
+   },
+   {
+    "answer": 1,
+    "p_top": 0.852
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8176
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7982
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7058
+   },
+   {
+    "answer": 1,
+    "p_top": 0.6514
+   },
+   {
+    "answer": 1,
+    "p_top": 0.5927
+   },
+   {
+    "answer": 1,
+    "p_top": 0.6792
+   }
+  ],
+  "_media": [
+   "media/TimeBlind_tb000018_w01.jpg",
+   "media/TimeBlind_tb000018_w02.jpg",
+   "media/TimeBlind_tb000018_w03.jpg",
+   "media/TimeBlind_tb000018_w04.jpg",
+   "media/TimeBlind_tb000018_w05.jpg",
+   "media/TimeBlind_tb000018_w06.jpg",
+   "media/TimeBlind_tb000018_w07.jpg",
+   "media/TimeBlind_tb000018_w08.jpg",
+   "media/TimeBlind_tb000018_w09.jpg",
+   "media/TimeBlind_tb000018_w10.jpg",
+   "media/TimeBlind_tb000018_w11.jpg",
+   "media/TimeBlind_tb000018_w12.jpg",
+   "media/TimeBlind_tb000018_w13.jpg",
+   "media/TimeBlind_tb000018_w14.jpg",
+   "media/TimeBlind_tb000018_w15.jpg",
+   "media/TimeBlind_tb000018_w16.jpg"
+  ]
+ },
+ {
+  "dataset": "VRU-Accident",
+  "uid": "vru_MANUAL_DATA_VRU_130_prevention-method",
+  "question": "How could this accident be prevented?",
+  "options": [
+   "A. Cyclists should follow traffic rules",
+   "B. Vehicles should reduce speed when their vision is blocked",
+   "C. Bus drivers should avoid making sudden stops",
+   "D. Skateboarders should stay off the road when it's busy"
+  ],
+  "gold": 1,
+  "answers": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "p_top": [
+   0.7976,
+   0.8813,
+   0.892,
+   0.8834,
+   0.8657,
+   0.8922,
+   0.9037,
+   0.914,
+   0.914,
+   0.908,
+   0.9152,
+   0.9152,
+   0.9152,
+   0.905,
+   0.8889,
+   0.9007
+  ],
+  "commit_window": 3,
+  "n_windows": 16,
+  "cardano_answer": 1,
+  "whole_clip_answer": 1,
+  "frames": [
+   "w01.jpg",
+   "w02.jpg",
+   "w03.jpg",
+   "w04.jpg",
+   "w05.jpg",
+   "w06.jpg",
+   "w07.jpg",
+   "w08.jpg",
+   "w09.jpg",
+   "w10.jpg",
+   "w11.jpg",
+   "w12.jpg",
+   "w13.jpg",
+   "w14.jpg",
+   "w15.jpg",
+   "w16.jpg"
+  ],
+  "kind": "success",
+  "per_window": [
+   {
+    "answer": 1,
+    "p_top": 0.7976
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8813
+   },
+   {
+    "answer": 1,
+    "p_top": 0.892
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8834
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8657
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8922
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9037
+   },
+   {
+    "answer": 1,
+    "p_top": 0.914
+   },
+   {
+    "answer": 1,
+    "p_top": 0.914
+   },
+   {
+    "answer": 1,
+    "p_top": 0.908
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9152
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9152
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9152
+   },
+   {
+    "answer": 1,
+    "p_top": 0.905
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8889
+   },
+   {
+    "answer": 1,
+    "p_top": 0.9007
+   }
+  ],
+  "_media": [
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w01.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w02.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w03.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w04.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w05.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w06.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w07.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w08.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w09.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w10.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w11.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w12.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w13.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w14.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w15.jpg",
+   "media/VRU-Accident_vru_MANUAL_DATA_VRU_130_prevention-method_w16.jpg"
+  ]
+ },
+ {
+  "dataset": "NExT-QA",
+  "uid": "nextqa#test#3",
+  "question": "what does the man do after stabilize the paper",
+  "options": [
+   "A. shorten the rope",
+   "B. start performing",
+   "C. move machine",
+   "D. puts the paper down",
+   "E. walk forward"
+  ],
+  "gold": 2,
+  "answers": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "p_top": [
+   0.8838,
+   0.8568,
+   0.8728,
+   0.9076,
+   0.9074,
+   0.8992,
+   0.9028,
+   0.9192,
+   0.9245,
+   0.7587,
+   0.8924,
+   0.9213,
+   0.9306,
+   0.9449,
+   0.9254,
+   0.5567
+  ],
+  "commit_window": 4,
+  "n_windows": 16,
+  "cardano_answer": 3,
+  "whole_clip_answer": 2,
+  "frames": [
+   "w01.jpg",
+   "w02.jpg",
+   "w03.jpg",
+   "w04.jpg",
+   "w05.jpg",
+   "w06.jpg",
+   "w07.jpg",
+   "w08.jpg",
+   "w09.jpg",
+   "w10.jpg",
+   "w11.jpg",
+   "w12.jpg",
+   "w13.jpg",
+   "w14.jpg",
+   "w15.jpg",
+   "w16.jpg"
+  ],
+  "kind": "failure case",
+  "per_window": [
+   {
+    "answer": 3,
+    "p_top": 0.8838
+   },
+   {
+    "answer": 3,
+    "p_top": 0.8568
+   },
+   {
+    "answer": 3,
+    "p_top": 0.8728
+   },
+   {
+    "answer": 3,
+    "p_top": 0.9076
+   },
+   {
+    "answer": 3,
+    "p_top": 0.9074
+   },
+   {
+    "answer": 3,
+    "p_top": 0.8992
+   },
+   {
+    "answer": 3,
+    "p_top": 0.9028
+   },
+   {
+    "answer": 3,
+    "p_top": 0.9192
+   },
+   {
+    "answer": 3,
+    "p_top": 0.9245
+   },
+   {
+    "answer": 3,
+    "p_top": 0.7587
+   },
+   {
+    "answer": 2,
+    "p_top": 0.8924
+   },
+   {
+    "answer": 2,
+    "p_top": 0.9213
+   },
+   {
+    "answer": 2,
+    "p_top": 0.9306
+   },
+   {
+    "answer": 2,
+    "p_top": 0.9449
+   },
+   {
+    "answer": 2,
+    "p_top": 0.9254
+   },
+   {
+    "answer": 2,
+    "p_top": 0.5567
+   }
+  ],
+  "_media": [
+   "media/NExT-QA_nextqa_test_3_w01.jpg",
+   "media/NExT-QA_nextqa_test_3_w02.jpg",
+   "media/NExT-QA_nextqa_test_3_w03.jpg",
+   "media/NExT-QA_nextqa_test_3_w04.jpg",
+   "media/NExT-QA_nextqa_test_3_w05.jpg",
+   "media/NExT-QA_nextqa_test_3_w06.jpg",
+   "media/NExT-QA_nextqa_test_3_w07.jpg",
+   "media/NExT-QA_nextqa_test_3_w08.jpg",
+   "media/NExT-QA_nextqa_test_3_w09.jpg",
+   "media/NExT-QA_nextqa_test_3_w10.jpg",
+   "media/NExT-QA_nextqa_test_3_w11.jpg",
+   "media/NExT-QA_nextqa_test_3_w12.jpg",
+   "media/NExT-QA_nextqa_test_3_w13.jpg",
+   "media/NExT-QA_nextqa_test_3_w14.jpg",
+   "media/NExT-QA_nextqa_test_3_w15.jpg",
+   "media/NExT-QA_nextqa_test_3_w16.jpg"
+  ]
+ },
+ {
+  "dataset": "TimeBlind",
+  "uid": "tb000503",
+  "question": "Do the cat\u2019s front paws move in and out with a large range of motion at first and a smaller range later?",
+  "options": [
+   "A. Yes",
+   "B. No"
+  ],
+  "gold": 0,
+  "answers": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "p_top": [
+   0.8176,
+   0.7773,
+   0.7773,
+   0.7982,
+   0.7982,
+   0.8176,
+   0.8176,
+   0.7058,
+   0.5622,
+   0.5927,
+   0.6224,
+   0.6514,
+   0.867,
+   0.9859,
+   0.9914,
+   0.9924
+  ],
+  "commit_window": 5,
+  "n_windows": 16,
+  "cardano_answer": 1,
+  "whole_clip_answer": 0,
+  "frames": [
+   "w01.jpg",
+   "w02.jpg",
+   "w03.jpg",
+   "w04.jpg",
+   "w05.jpg",
+   "w06.jpg",
+   "w07.jpg",
+   "w08.jpg",
+   "w09.jpg",
+   "w10.jpg",
+   "w11.jpg",
+   "w12.jpg",
+   "w13.jpg",
+   "w14.jpg",
+   "w15.jpg",
+   "w16.jpg"
+  ],
+  "kind": "failure case",
+  "per_window": [
+   {
+    "answer": 1,
+    "p_top": 0.8176
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7773
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7773
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7982
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7982
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8176
+   },
+   {
+    "answer": 1,
+    "p_top": 0.8176
+   },
+   {
+    "answer": 1,
+    "p_top": 0.7058
+   },
+   {
+    "answer": 1,
+    "p_top": 0.5622
+   },
+   {
+    "answer": 1,
+    "p_top": 0.5927
+   },
+   {
+    "answer": 1,
+    "p_top": 0.6224
+   },
+   {
+    "answer": 1,
+    "p_top": 0.6514
+   },
+   {
+    "answer": 0,
+    "p_top": 0.867
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9859
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9914
+   },
+   {
+    "answer": 0,
+    "p_top": 0.9924
+   }
+  ],
+  "_media": [
+   "media/TimeBlind_tb000503_w01.jpg",
+   "media/TimeBlind_tb000503_w02.jpg",
+   "media/TimeBlind_tb000503_w03.jpg",
+   "media/TimeBlind_tb000503_w04.jpg",
+   "media/TimeBlind_tb000503_w05.jpg",
+   "media/TimeBlind_tb000503_w06.jpg",
+   "media/TimeBlind_tb000503_w07.jpg",
+   "media/TimeBlind_tb000503_w08.jpg",
+   "media/TimeBlind_tb000503_w09.jpg",
+   "media/TimeBlind_tb000503_w10.jpg",
+   "media/TimeBlind_tb000503_w11.jpg",
+   "media/TimeBlind_tb000503_w12.jpg",
+   "media/TimeBlind_tb000503_w13.jpg",
+   "media/TimeBlind_tb000503_w14.jpg",
+   "media/TimeBlind_tb000503_w15.jpg",
+   "media/TimeBlind_tb000503_w16.jpg"
+  ]
+ }
+]

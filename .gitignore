@@ -1,0 +1,6 @@
+# GitHub Pages
+_site/
+.jekyll-cache/
+
+# OS
+.DS_Store

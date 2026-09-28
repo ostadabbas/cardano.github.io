@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cardano — Learning When to Stop Watching</title>
+<meta name="description" content="Cardano: a streaming video-language model that decides, while the video is still playing, that watching more would not change its answer.">
+<meta property="og:title" content="Cardano — Learning When to Stop Watching">
+<meta property="og:description" content="A 40-parameter commit head that decides when more video would not change the answer.">
+<meta property="og:image" content="static/teaser.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15181d; --body:#3b424d; --mute:#6b7280; --hair:#e3e6ea; --bg:#ffffff;
+    --soft:#f7f8fa; --commit:#2f7d5d; --commit-bg:#e8f3ee; --advance:#b4762c;
+    --wrong:#b3261e; --wrong-bg:#fbecea; --accent:#1f4e79;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#e9ecf1; --body:#b9c0cb; --mute:#8b93a1; --hair:#2a2f37; --bg:#0f1114;
+           --soft:#161a1f; --commit:#5fb894; --commit-bg:#162b23; --advance:#d8a35a;
+           --wrong:#e4796f; --wrong-bg:#2b1a18; --accent:#7fb3e0; }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--body);
+       font:400 17px/1.65 "Source Serif 4",Georgia,serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  h1,h2,h3,.ui{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  h1{font-size:clamp(30px,5vw,44px);line-height:1.12;font-weight:600;color:var(--ink);
+     letter-spacing:-.02em;margin:0 0 6px}
+  h2{font-size:15px;font-weight:600;color:var(--mute);letter-spacing:.08em;
+     text-transform:uppercase;margin:0 0 20px}
+  h3{font-size:19px;font-weight:600;color:var(--ink);margin:34px 0 10px}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  a:hover{border-bottom-color:currentColor}
+  header{padding:64px 0 8px;text-align:center;border-bottom:1px solid var(--hair)}
+  .sub{font-size:19px;color:var(--mute);margin:0 0 26px;font-style:italic}
+  .authors{font-family:Inter,sans-serif;font-size:17px;color:var(--ink);margin:0 0 6px;line-height:1.9}
+  .authors a{color:var(--ink)}
+  .authors sup{color:var(--accent);font-size:11px;font-weight:600;padding-left:1px}
+  .affil{font-family:Inter,sans-serif;font-size:14px;color:var(--mute);margin:0 0 30px}
+  .affil sup{color:var(--accent);font-weight:600}
+  .badges{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;padding-bottom:40px}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-family:Inter,sans-serif;
+    font-size:14px;font-weight:500;padding:9px 17px;border-radius:999px;
+    background:var(--ink);color:var(--bg);border:1px solid var(--ink);transition:opacity .15s}
+  .badge:hover{opacity:.82;border-bottom-color:transparent}
+  .badge.ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
+  .badge.ghost:hover{border-color:var(--mute);opacity:1}
+  .badge svg{width:15px;height:15px;fill:currentColor}
+  section{padding:46px 0;border-bottom:1px solid var(--hair)}
+  section:last-of-type{border-bottom:none}
+  p{margin:0 0 16px}
+  .lead{font-size:19px}
+  figure{margin:26px 0}
+  figure img{width:100%;height:auto;display:block;border:1px solid var(--hair);border-radius:6px;background:#fff}
+  figcaption{font-size:14.5px;color:var(--mute);margin-top:11px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;font-family:Inter,sans-serif;font-size:15px;margin:22px 0}
+  th{text-align:left;font-weight:600;color:var(--mute);font-size:12px;letter-spacing:.06em;
+     text-transform:uppercase;padding:0 12px 9px 0;border-bottom:1px solid var(--hair)}
+  td{padding:11px 12px 11px 0;border-bottom:1px solid var(--hair);color:var(--body)}
+  td.n{font-variant-numeric:tabular-nums}
+  td.win{color:var(--commit);font-weight:600}
+  .note{font-size:15px;color:var(--mute);border-left:2px solid var(--hair);padding:2px 0 2px 16px;margin:22px 0}
+  /* ---- episode viewer ---- */
+  .picker{display:flex;flex-wrap:wrap;gap:7px;margin:24px 0 8px}
+  .chip{font-family:Inter,sans-serif;font-size:13px;font-weight:500;padding:7px 13px;
+    border:1px solid var(--hair);border-radius:999px;background:transparent;color:var(--body);
+    cursor:pointer;transition:all .13s}
+  .chip:hover{border-color:var(--mute)}
+  .chip[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .ep{background:var(--soft);border:1px solid var(--hair);border-radius:8px;padding:22px;margin-top:14px}
+  .epq{font-size:18px;color:var(--ink);margin:0 0 14px;line-height:1.45}
+  .opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .opt{font-family:Inter,sans-serif;font-size:13px;padding:5px 11px;border-radius:5px;
+    background:var(--bg);border:1px solid var(--hair);color:var(--mute)}
+  .opt.gold{border-color:var(--commit);color:var(--commit);font-weight:600}
+  .opt.said{background:var(--commit-bg)}
+  .opt.said.bad{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+  .strip{display:grid;grid-template-columns:repeat(16,1fr);gap:3px;margin-bottom:6px}
+  .w{position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;
+     border:1px solid var(--hair);background:var(--bg)}
+  .w img{width:100%;height:100%;object-fit:cover;display:block}
+  .w.after img{opacity:.22;filter:grayscale(1)}
+  .w.commit{outline:2.5px solid var(--commit);outline-offset:0;border-color:var(--commit);z-index:2}
+  .w.commit.bad{outline-color:var(--wrong);border-color:var(--wrong)}
+  .axis{display:grid;grid-template-columns:repeat(16,1fr);gap:3px;
+    font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--mute);text-align:center}
+  .axis span.at{color:var(--commit);font-weight:700}
+  .meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:16px;font-family:Inter,sans-serif;font-size:14px}
+  .meta b{color:var(--ink);font-weight:600}
+  .legend{display:flex;flex-wrap:wrap;gap:20px;font-family:Inter,sans-serif;font-size:13px;
+    color:var(--mute);margin-top:18px}
+  .sw{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:-1px;margin-right:6px}
+  pre{background:var(--soft);border:1px solid var(--hair);border-radius:6px;padding:17px;
+      overflow-x:auto;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.6;color:var(--body)}
+  footer{padding:40px 0 64px;font-family:Inter,sans-serif;font-size:14px;color:var(--mute);text-align:center}
+  @media (max-width:640px){
+    .strip,.axis{grid-template-columns:repeat(8,1fr)}
+    body{font-size:16px}
+    header{padding-top:42px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Cardano</h1>
+    <p class="sub">Learning when to stop watching</p>
+    <p class="authors">
+      Bishoy Galoaa<sup>1</sup> &nbsp;·&nbsp;
+      Sadid A. Hasan<sup>2</sup> &nbsp;·&nbsp;
+      Sarah Ostadabbas<sup>1</sup>
+    </p>
+    <p class="affil">
+      <sup>1</sup><a href="https://www.neu.edu">Northeastern University</a>
+      &nbsp;&nbsp;<sup>2</sup><a href="https://www.microsoft.com">Microsoft</a>
+    </p>
+    <div class="badges">
+      <a class="badge" href="https://huggingface.co/bishoygaloaa/cardano">
+        <span aria-hidden="true">🤗</span> Weights &amp; Results
+      </a>
+      <a class="badge ghost" href="https://github.com/ostadabbas/Cardano">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.07-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        Code
+      </a>
+      <a class="badge ghost" href="#supplementary">Supplementary</a>
+      <a class="badge ghost" href="#bibtex">BibTeX</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <h2>Overview</h2>
+  <p class="lead">A streaming video model normally watches a clip to the end before answering.
+  Cardano decides, <strong>while the video is still playing</strong>, that watching more of it
+  would not change its answer — and stops there.</p>
+  <p>The decision is made by a <strong>40-parameter linear head</strong> that reads nine
+  features of the model's own answer distribution. It reads no hidden state, runs at a single
+  global operating point, and is never tuned per dataset. The same head, fit once, transfers
+  unchanged across three backbones and onto benchmarks it was never fit on.</p>
+  <figure>
+    <img src="static/pipeline.png" alt="Cardano pipeline: windows arrive, a KV cache accumulates, and a commit head reads the answer distribution after each window.">
+    <figcaption>Video arrives one window at a time. The backbone keeps a key–value cache, so
+    each frame is encoded once and windows past the commit are never encoded at all. After each
+    window the head asks a single question: <em>would the rest of the video change this
+    answer?</em></figcaption>
+  </figure>
+  <div class="note">A stopping rule is not a confidence threshold. Confidence asks <em>how sure
+  am I?</em>; Cardano asks <em>would more evidence move me?</em> Those come apart — and the
+  practical consequence is that Cardano matches a tuned per-dataset confidence threshold while
+  itself being untuned.</div>
+</section>
+
+<section>
+  <h2>Results</h2>
+  <p>Accuracy and fraction of video watched on Qwen2.5-VL-7B, against a <strong>matched causal
+  budget</strong> that watches the same number of leading windows:</p>
+  <table>
+    <thead><tr><th>Benchmark</th><th>Cardano</th><th>Watched</th><th>vs. matched budget</th></tr></thead>
+    <tbody>
+      <tr><td>STAR</td><td class="n">67.2</td><td class="n">0.69</td><td class="n win">+3.7 <span style="color:var(--mute);font-weight:400">[+2.4, +5.1]</span></td></tr>
+      <tr><td>NExT-QA</td><td class="n">81.8</td><td class="n">0.31</td><td class="n win">+1.3 <span style="color:var(--mute);font-weight:400">[+0.3, +2.3]</span></td></tr>
+      <tr><td>FunQA</td><td class="n">76.0</td><td class="n">0.41</td><td class="n win">+1.9 <span style="color:var(--mute);font-weight:400">[+0.9, +3.0]</span></td></tr>
+      <tr><td>Video-MME</td><td class="n">65.1</td><td class="n">0.59</td><td class="n win">+2.5 <span style="color:var(--mute);font-weight:400">[+0.6, +4.4]</span></td></tr>
+    </tbody>
+  </table>
+  <p>Every interval excludes zero and holds on <strong>10 of 10</strong> head-fit seeds. On
+  LLaVA-OneVision-7B the same unrefit head gives +3.5, +2.3 and +2.4 on the first three.</p>
+  <p>The saving is what the stopping head buys. Where accuracy also improves on an off-the-shelf
+  backbone, that comes from fine-tuning the answerer.</p>
+  <figure>
+    <img src="static/pareto.png" alt="Accuracy against fraction of video watched, on three benchmarks. Cardano sits above the causal fixed-budget curve at every operating point.">
+    <figcaption>Green points are the four budget settings. Cardano sits above the causal
+    fixed-budget curve at every one, and on FunQA above the whole-video backbone while watching
+    under half the video.</figcaption>
+  </figure>
+</section>
+
+<section id="supplementary">
+  <h2>Supplementary — episodes</h2>
+  <p>Eight episodes, one strip each. All sixteen windows are shown; the <strong>boxed</strong>
+  window is where the head committed, and everything to its right is
+  <strong>faded because the model never encoded it</strong>. Two episodes are failure cases,
+  included deliberately.</p>
+
+  <div class="picker" id="picker" role="tablist"></div>
+  <div id="stage"></div>
+
+  <div class="legend">
+    <span><span class="sw" style="background:var(--commit)"></span>commit window, answered correctly</span>
+    <span><span class="sw" style="background:var(--wrong)"></span>commit window, answered wrongly</span>
+    <span><span class="sw" style="background:var(--hair)"></span>never encoded</span>
+  </div>
+
+  <h3>The mechanism on safety-critical footage</h3>
+  <p>A pedestrian is already crossing in the first window. The head commits at the third of
+  sixteen and answers correctly, so the answer exists <em>while the clip is still playing</em>
+  rather than after it ends.</p>
+  <figure>
+    <img src="static/vru.png" alt="A VRU-Accident dashcam episode. The commit window is boxed at window three of sixteen; the remaining thirteen windows are faded.">
+    <figcaption>VRU-Accident. Thirteen of sixteen windows are never encoded.</figcaption>
+  </figure>
+  <div class="note">The converse matters as much. On egocentric planning — where the question
+  asks what to do <em>next</em>, so the decisive evidence is the final frame — the same head
+  watches 0.89 of the stream and declines to commit early on about two thirds of items. That is
+  the correct behaviour there, and it is not something a fixed budget can do.</div>
+</section>
+
+<section id="bibtex">
+  <h2>BibTeX</h2>
+  <pre>@misc{galoaa2026cardano,
+  title  = {Cardano: Learning When to Stop Watching},
+  author = {Galoaa, Bishoy and Hasan, Sadid A. and Ostadabbas, Sarah},
+  year   = {2026},
+  note   = {Code: https://github.com/ostadabbas/Cardano;
+            Weights: https://huggingface.co/bishoygaloaa/cardano}
+}</pre>
+</section>
+
+<footer>
+  <p>Augmented Cognition Lab, Northeastern University &nbsp;·&nbsp;
+     <a href="https://github.com/ostadabbas/Cardano">Code</a> &nbsp;·&nbsp;
+     <a href="https://huggingface.co/bishoygaloaa/cardano">Weights</a></p>
+</footer>
+
+</div>
+
+<script>
+const LET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let EPS = [];
+
+// _media is an exact list of paths, one per window -- use it rather than rebuilding names
+function frameSrc(e, t){
+  if (Array.isArray(e._media) && e._media[t-1]) return e._media[t-1];
+  const s = (e.dataset + "_" + e.uid).replace(/[^A-Za-z0-9_.-]+/g, "_");
+  return `media/${s}_w${String(t).padStart(2,"0")}.jpg`;
+}
+
+function render(i){
+  const e = EPS[i], W = e.n_windows || 16;
+  const ok = e.cardano_answer === e.gold;
+  const cw = e.commit_window;
+  let strip = "", axis = "";
+  for (let t = 1; t <= W; t++){
+    const cls = ["w", t > cw ? "after" : "", t === cw ? "commit" : "", (t === cw && !ok) ? "bad" : ""]
+      .filter(Boolean).join(" ");
+    strip += `<div class="${cls}"><img loading="lazy" src="${frameSrc(e, t)}" alt="window ${t}"></div>`;
+    axis  += `<span class="${t === cw ? "at" : ""}">${t}</span>`;
+  }
+  const opts = (e.options || []).map((o, k) => {
+    const c = ["opt", k === e.gold ? "gold" : "", k === e.cardano_answer ? "said" : "",
+               (k === e.cardano_answer && !ok) ? "bad" : ""].filter(Boolean).join(" ");
+    return `<span class="${c}">${LET[k]}. ${o}</span>`;
+  }).join("");
+  document.getElementById("stage").innerHTML = `
+    <div class="ep">
+      <p class="epq">${e.question}</p>
+      <div class="opts">${opts}</div>
+      <div class="strip">${strip}</div>
+      <div class="axis">${axis}</div>
+      <div class="meta">
+        <span><b>${e.dataset}</b></span>
+        <span>committed at window <b>${cw}</b> of ${W}</span>
+        <span>watched <b>${(cw / W).toFixed(2)}</b> of the clip</span>
+        <span style="color:${ok ? "var(--commit)" : "var(--wrong)"}"><b>${ok ? "correct" : "incorrect"}</b></span>
+      </div>
+    </div>`;
+  [...document.querySelectorAll("#picker .chip")].forEach((c, k) =>
+    c.setAttribute("aria-selected", k === i ? "true" : "false"));
+}
+
+fetch("static/episodes.json").then(r => r.json()).then(d => {
+  EPS = d;
+  document.getElementById("picker").innerHTML = EPS.map((e, i) => {
+    const ok = e.cardano_answer === e.gold;
+    return `<button class="chip" role="tab" onclick="render(${i})">${e.dataset}${ok ? "" : " ✗"}</button>`;
+  }).join("");
+  render(0);
+});
+</script>
+</body>
+</html>
