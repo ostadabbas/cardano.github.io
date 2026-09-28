@@ -19,11 +19,6 @@
     --soft:#f7f8fa; --commit:#2f7d5d; --commit-bg:#e8f3ee; --advance:#b4762c;
     --wrong:#b3261e; --wrong-bg:#fbecea; --accent:#1f4e79;
   }
-  @media (prefers-color-scheme: dark){
-    :root{ --ink:#e9ecf1; --body:#b9c0cb; --mute:#8b93a1; --hair:#2a2f37; --bg:#0f1114;
-           --soft:#161a1f; --commit:#5fb894; --commit-bg:#162b23; --advance:#d8a35a;
-           --wrong:#e4796f; --wrong-bg:#2b1a18; --accent:#7fb3e0; }
-  }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--body);
@@ -73,7 +68,8 @@
     cursor:pointer;transition:all .13s}
   .chip:hover{border-color:var(--mute)}
   .chip[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-  .ep{background:var(--soft);border:1px solid var(--hair);border-radius:8px;padding:22px;margin-top:14px}
+  .ep{background:var(--soft);border:1px solid var(--hair);border-radius:8px;padding:24px;margin-top:14px;
+       width:min(1180px, calc(100vw - 40px));position:relative;left:50%;transform:translateX(-50%)}
   .epq{font-size:18px;color:var(--ink);margin:0 0 14px;line-height:1.45}
   .opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
   .opt{font-family:Inter,sans-serif;font-size:13px;padding:5px 11px;border-radius:5px;
@@ -81,15 +77,16 @@
   .opt.gold{border-color:var(--commit);color:var(--commit);font-weight:600}
   .opt.said{background:var(--commit-bg)}
   .opt.said.bad{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
-  .strip{display:grid;grid-template-columns:repeat(16,1fr);gap:3px;margin-bottom:6px}
-  .w{position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;
+  .strip{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-bottom:0}
+  .strip + .axis{margin-bottom:14px}
+  .w{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;
      border:1px solid var(--hair);background:var(--bg)}
   .w img{width:100%;height:100%;object-fit:cover;display:block}
   .w.after img{opacity:.22;filter:grayscale(1)}
-  .w.commit{outline:2.5px solid var(--commit);outline-offset:0;border-color:var(--commit);z-index:2}
+  .w.commit{outline:3px solid var(--commit);outline-offset:1px;border-color:var(--commit);z-index:2}
   .w.commit.bad{outline-color:var(--wrong);border-color:var(--wrong)}
-  .axis{display:grid;grid-template-columns:repeat(16,1fr);gap:3px;
-    font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--mute);text-align:center}
+  .axis{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;padding-top:5px;
+    font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mute);text-align:center}
   .axis span.at{color:var(--commit);font-weight:700}
   .meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:16px;font-family:Inter,sans-serif;font-size:14px}
   .meta b{color:var(--ink);font-weight:600}
@@ -100,7 +97,8 @@
       overflow-x:auto;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.6;color:var(--body)}
   footer{padding:40px 0 64px;font-family:Inter,sans-serif;font-size:14px;color:var(--mute);text-align:center}
   @media (max-width:640px){
-    .strip,.axis{grid-template-columns:repeat(8,1fr)}
+    .strip,.axis{grid-template-columns:repeat(4,1fr)}
+    .ep{width:calc(100vw - 32px);padding:16px}
     body{font-size:16px}
     header{padding-top:42px}
   }
@@ -258,7 +256,9 @@ function render(i){
   const opts = (e.options || []).map((o, k) => {
     const c = ["opt", k === e.gold ? "gold" : "", k === e.cardano_answer ? "said" : "",
                (k === e.cardano_answer && !ok) ? "bad" : ""].filter(Boolean).join(" ");
-    return `<span class="${c}">${LET[k]}. ${o}</span>`;
+    // some sources already carry an "A. " prefix -- strip it so the letter is not doubled
+    const txt = String(o).replace(/^\s*[A-Z][.)]\s*/, "");
+    return `<span class="${c}">${LET[k]}. ${txt}</span>`;
   }).join("");
   document.getElementById("stage").innerHTML = `
     <div class="ep">
